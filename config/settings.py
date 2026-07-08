@@ -2,13 +2,13 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-# BASE DIR
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load .env
+
 load_dotenv(BASE_DIR / ".env")
 
-# SECURITY
+
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-key")
 DEBUG = os.getenv("DEBUG", "True") == "True"
 OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
@@ -19,7 +19,7 @@ ALLOWED_HOSTS = [
     ".pythonanywhere.com"
 ]
 
-# APPLICATIONS
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,17 +28,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third-party
+
     'rest_framework',
     'django_filters',
 
-    # Local apps
+
     'apps.accounts',
     'apps.weather',
     'apps.api',
 ]
 
-# MIDDLEWARE
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,7 +51,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-# TEMPLATES
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -69,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# DATABASE
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -77,7 +77,7 @@ DATABASES = {
     }
 }
 
-# AUTH
+
 AUTH_USER_MODEL = 'accounts.User'
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -91,7 +91,7 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 
-# REST FRAMEWORK (FINAL CLEAN VERSION)
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",
@@ -107,19 +107,19 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
 }
 
-# INTERNATIONALIZATION
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# STATIC
+
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# LOGIN/LOGOUT
+
 LOGIN_REDIRECT_URL = "/api/locations/"
 LOGOUT_REDIRECT_URL = "/api-auth/login/"
 
-# DEFAULT PRIMARY KEY
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
