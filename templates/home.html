@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API Project</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+
+        .card{
+            background:white;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,.15);
+            text-align:center;
+            width:500px;
+        }
+
+        h1{
+            color:#2c3e50;
+        }
+
+        a{
+            display:block;
+            margin:12px 0;
+            text-decoration:none;
+            color:#0066cc;
+            font-size:18px;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🌤 Weather API Project</h1>
+
+    <p>Welcome to my Django REST Framework Weather API.</p>
+
+    <h3>Available Pages</h3>
+
+    <a href="/api/locations/">📍 Locations</a>
+    <a href="/api/weather/1/">🌦 Weather Example</a>
+    <a href="/admin/">⚙ Admin Panel</a>
+    <a href="/api-auth/login/">🔐 Login</a>
+</div>
+
+</body>
+</html>
